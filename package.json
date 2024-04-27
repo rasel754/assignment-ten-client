@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "dropdown-input-react": "^0.1.5",
     "firebase": "^10.11.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
