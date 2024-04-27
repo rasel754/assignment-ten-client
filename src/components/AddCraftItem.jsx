@@ -3,10 +3,18 @@ import { useState } from "react";
 const AddCraftItem = () => {
   // State to store the selected value
   const [selectedOption, setSelectedOption] = useState("");
+  const [customization , setCustomization] = useState("");
+  const [stock , setStock] = useState("");
 
   // Function to handle change in selection
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
+  };
+  const handleCustomization = (event) => {
+    setCustomization(event.target.value);
+  };
+  const handleStock = (event) => {
+    setStock(event.target.value);
   };
 
   const handleAddCraft = (event) => {
@@ -22,7 +30,12 @@ const AddCraftItem = () => {
     const email = form.email.value;
     const rating = form.rating.value;
     const customization = form.customization.value;
-    
+    const stockStatus = form.stockStatus.value;
+    const photo = form.photo.value;
+
+    const Info = {itemName,subcategoryName,shortDescription,price,processTime,name,email,rating,customization, stockStatus, photo};
+    console.log(Info);
+
 
 
 
@@ -76,8 +89,7 @@ const AddCraftItem = () => {
             <label className="input-group">
               <input
                 type="text"
-                name="shortDescription
-                  "
+                name="shortDescription"
                 placeholder="give short description
                   "
                 className="input input-bordered w-full"
@@ -159,11 +171,11 @@ const AddCraftItem = () => {
               {/* Default placeholder option */}
               <option value="">give rating</option>
               {/* Other options */}
-              <option value="option1"> 1</option>
-              <option value="option2"> 2</option>
-              <option value="option3"> 3</option>
-              <option value="option4"> 4</option>
-              <option value="option5"> 5</option>
+              <option value="1"> 1</option>
+              <option value="2"> 2</option>
+              <option value="3"> 3</option>
+              <option value="4"> 4</option>
+              <option value="5"> 5</option>
             </select>
           </div>
         </div>
@@ -179,14 +191,14 @@ const AddCraftItem = () => {
             <select
               name="customization"
               className="w-full p-4 border rounded-xl"
-              value={selectedOption}
-              onChange={handleSelectChange}
+              value={customization}
+              onChange={handleCustomization}
             >
               {/* Default placeholder option */}
               <option value="">Select an option</option>
               {/* Other options */}
-              <option value="option1">Yes</option>
-              <option value="option2">NO</option>
+              <option value="YES">Yes</option>
+              <option value="NO">NO</option>
             </select>
           </div>
 
@@ -198,14 +210,14 @@ const AddCraftItem = () => {
             <select
               name="stockStatus"
               className="w-full p-4 border rounded-xl"
-              value={selectedOption}
-              onChange={handleSelectChange}
+              value={stock}
+              onChange={handleStock}
             >
               {/* Default placeholder option */}
               <option value="">Select an option</option>
               {/* Other options */}
-              <option value="option1">In stock</option>
-              <option value="option2">Made to Order</option>
+              <option value="In stock">In stock</option>
+              <option value="Made to Order">Made to Order</option>
             </select>
           </div>
         </div>
