@@ -10,6 +10,7 @@ import Root from './components/Root';
 import AuthProvider from './provider/AuthProvider';
 import Login from './components/Login';
 import Register from './components/Register';
+import AddCraftItem from './components/AddCraftItem';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,9 @@ const router = createBrowserRouter([
       },{
         path: "/register",
         element:<Register></Register>
+      },{
+        path: "/addCraftItem",
+        element:<AddCraftItem></AddCraftItem>
       }
 
     ]

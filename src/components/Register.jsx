@@ -29,12 +29,23 @@ const Register = () => {
 
     if (password.length < 6) {
       setRegisterError(
-        alert(" Password should be at least 6 characters........please provide a valid password")
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Password should be at least 6 characters........please provide a valid password",
+            footer: '<a href="#">Why do I have this issue?</a>'
+          })
+       
       );
       return;
     } else if (!/^(?=.*[a-z])(?=.*[A-Z])/.test(password)) {
       setRegisterError(
-        alert(" Password should contain at least one uppercase letter and one lowercase letter......please create a strong password")
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: " Password should contain at least one uppercase letter and one lowercase letter......please create a strong password!",
+            footer: '<a href="#">Why do I have this issue?</a>'
+          })
       );
       return;
     }

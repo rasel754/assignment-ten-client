@@ -9,6 +9,7 @@ export const AuthContext =createContext(null);
 
 const AuthProvider = ({children}) => {
 
+
     const [user, setUser] = useState(null)
 
     const createRegister =(email, password)=>{
@@ -21,7 +22,6 @@ const AuthProvider = ({children}) => {
         return ()=>{
             unsubscribe();
         }
-
         
     },[])
     const signIn = (email , password) => {
@@ -30,14 +30,14 @@ const AuthProvider = ({children}) => {
     const logout = () => {
         return signOut(auth)
     }
-    
+  
 
     const authInfo={
         user,
         createRegister,
         signIn,
         logout,
-        setUser
+        setUser,
 
     }
     return (
