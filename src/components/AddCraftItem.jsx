@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 const AddCraftItem = () => {
   // State to store the selected value
@@ -36,6 +37,27 @@ const AddCraftItem = () => {
     const Info = {itemName,subcategoryName,shortDescription,price,processTime,name,email,rating,customization, stockStatus, photo};
     console.log(Info);
 
+    fetch("http://localhost:5000/addCraft",{
+        method:'POST',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify(Info)
+    })
+     .then(res => res.json())
+     .then((data) => {
+        console.log(data);
+        if(data.insertedId){
+            Swal.fire({
+                icon: "success",
+                title: "Yaaa...",
+                text: "user added successfully",
+               
+              });
+              form.reset();
+        }
+      })
+
 
 
 
@@ -43,15 +65,15 @@ const AddCraftItem = () => {
   };
   return (
     <div className="">
-      <h2 className="text-3xl font-extrabold text-center bg-[#B3D9FF] py-8 md:w-4/5 mx-auto shadow-2xl">
+      <h2 className="text-3xl font-extrabold text-center rounded-t-3xl bg-[#B3D9FF] py-8 md:w-4/5 mx-auto shadow-2xl">
         Add a Coffee
       </h2>
       <form
         onSubmit={handleAddCraft}
-        className="bg-[#F2F9FC] p-24 md:w-4/5 mx-auto shadow-2xl"
+        className="bg-[#F2F9FC] p-6 md:p-12 lg:p-24 md:w-4/5 mx-auto shadow-2xl"
       >
         {/* form name and quantity row */}
-        <div className="md:flex mb-4">
+        <div className="md:flex mb-1 md:mb-4">
           <div className="form-control md:w-1/2">
             <label className="label">
               <span className="label-text">Item Name</span>
@@ -238,7 +260,7 @@ const AddCraftItem = () => {
             </label>
           </div>
         </div>
-        <input type="submit" value="Add Craft Item" className="btn btn-block" />
+        <input type="submit" value="Add Craft Item" className="btn btn-block btn-secondary text-black font-extrabold text-2xl" />
       </form>
     </div>
   );

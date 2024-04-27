@@ -68,7 +68,7 @@ const Login = () => {
   return (
     <div>
       <div className="">
-        <h1 className="text-3xl text-center mt-5">Login your account</h1>
+        <h1 className="text-3xl text-center mt-5 md:w-3/4 lg:w-1/2 mx-auto p-6 rounded-t-3xl font-semibold bg-[#2957FD]">Login your account</h1>
         <form
           onSubmit={handleLogin}
           className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-[#cbd5e1] shadow-2xl	"
@@ -103,7 +103,7 @@ const Login = () => {
             </label>
           </div>
           <div className="form-control mt-3">
-            <button className="btn btn-primary">Login</button>
+            <button className="btn btn-primary ">Login</button>
           </div>
         </form>
         <div className="divider divider-info md:w-3/5 lg:w-1/3 mx-auto">OR</div>
