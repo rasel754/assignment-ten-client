@@ -70,7 +70,7 @@ const AddCraftItem = () => {
   return (
     <div className="">
       <h2 className="text-3xl font-extrabold text-center rounded-t-3xl bg-[#B3D9FF] py-8 md:w-4/5 mx-auto shadow-2xl">
-        Add a Coffee
+        Add Craft Item
       </h2>
       <form
         onSubmit={handleAddCraft}

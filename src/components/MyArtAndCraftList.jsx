@@ -15,7 +15,7 @@ const MyArtAndCraftList = () => {
     },[user])
     return (
         <div>
-            <h1>this is my art and craft section</h1>
+            <h1 className="bg-[#1C384E] text-white py-10 text-center font-extrabold text-3xl"> My Art And Craft</h1>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-6">
                 {
