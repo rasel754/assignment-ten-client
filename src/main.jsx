@@ -12,6 +12,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import AddCraftItem from './components/AddCraftItem';
 import MyArtAndCraftList from './components/MyArtAndCraftList';
+import AllArtAndCraftItems from './components/AllArtAndCraftItems';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       },{
         path: "/myArtAndCraft",
         element: <MyArtAndCraftList></MyArtAndCraftList>
+      },{
+        path: "/allArtAndCraft",
+        element:<AllArtAndCraftItems></AllArtAndCraftItems>,
+        loader :() => fetch('http://localhost:5000/allArtAndCraft')
       }
 
     ]
