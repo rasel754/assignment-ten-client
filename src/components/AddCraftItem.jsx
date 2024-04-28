@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Swal from "sweetalert2";
+// import useAuth from '../hooks/useAuth.jsx';
+// import useAuth from '../hooks/useAuth';
+import { AuthContext } from "../provider/AuthProvider";
+
 
 const AddCraftItem = () => {
   // State to store the selected value
   const [selectedOption, setSelectedOption] = useState("");
   const [customization , setCustomization] = useState("");
   const [stock , setStock] = useState("");
+  const {user}= useContext(AuthContext) ||{};
 
   // Function to handle change in selection
   const handleSelectChange = (event) => {
@@ -33,8 +38,9 @@ const AddCraftItem = () => {
     const customization = form.customization.value;
     const stockStatus = form.stockStatus.value;
     const photo = form.photo.value;
+    const ownerEmail = user.email;
 
-    const Info = {itemName,subcategoryName,shortDescription,price,processTime,name,email,rating,customization, stockStatus, photo};
+    const Info = {itemName,subcategoryName,shortDescription,price,processTime,name,email,rating,customization, stockStatus, photo,ownerEmail};
     console.log(Info);
 
     fetch("http://localhost:5000/addCraft",{

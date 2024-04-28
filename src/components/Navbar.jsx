@@ -18,7 +18,7 @@ const Navbar = () => {
     const navLinks =<>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/addCraftItem">Add Craft Item</NavLink></li>
-        <li><NavLink to="/updateProfile">Update Profile</NavLink></li>
+        <li><NavLink to="/myArtAndCraft">My Art&Craft List</NavLink></li>
         <li><NavLink to="/userInformation">User Information</NavLink></li>
         
     </>
@@ -33,7 +33,7 @@ const Navbar = () => {
              {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl animate__bounce  "><span className="text-blue-600">RS</span > RESIDENCE</a>
+          <a className="btn btn-ghost text-xl animate__bounce  "><span className="text-blue-600">Glass & </span > Paper Palette</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

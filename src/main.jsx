@@ -11,6 +11,7 @@ import AuthProvider from './provider/AuthProvider';
 import Login from './components/Login';
 import Register from './components/Register';
 import AddCraftItem from './components/AddCraftItem';
+import MyArtAndCraftList from './components/MyArtAndCraftList';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,9 @@ const router = createBrowserRouter([
       },{
         path: "/addCraftItem",
         element:<AddCraftItem></AddCraftItem>
+      },{
+        path: "/myArtAndCraft",
+        element: <MyArtAndCraftList></MyArtAndCraftList>
       }
 
     ]
