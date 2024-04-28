@@ -1,7 +1,5 @@
 import { useContext, useState } from "react";
 import Swal from "sweetalert2";
-// import useAuth from '../hooks/useAuth.jsx';
-// import useAuth from '../hooks/useAuth';
 import { AuthContext } from "../provider/AuthProvider";
 
 
