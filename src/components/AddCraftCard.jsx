@@ -1,7 +1,9 @@
 import { IoIosStar } from "react-icons/io";
+import Swal from "sweetalert2";
 
-const AddCraftCard = ({ list }) => {
+const AddCraftCard = ({ list,item,setItem }) => {
   const {
+    _id,
     itemName,
     subcategoryName,
     shortDescription,
@@ -12,6 +14,39 @@ const AddCraftCard = ({ list }) => {
     photo,
     
   } = list;
+
+  const handleDelete =_id => {
+    console.log(_id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        
+        fetch(`http://localhost:5000/myArtAndCraft/${_id}`,{
+          method:'DELETE'
+        })
+        .then(res => res.json())
+        .then((data) => {
+          console.log(data);
+          if(data.deletedCount>0) {
+            Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success"
+          })
+          const remaining = item.filter(p => p._id !== _id)
+          setItem(remaining)
+          }
+        });
+      }
+    });
+  };
   return (
     <div>
       <div className="card  bg-base-100 shadow-xl">
@@ -38,7 +73,9 @@ const AddCraftCard = ({ list }) => {
 
             <div className="card-actions justify-between">
             <button className="btn btn-primary">Update</button>
-            <button className="btn btn-primary btn-warning">Delete</button>
+            <button
+            onClick={()=>handleDelete(_id)}
+             className="btn btn-primary btn-warning">Delete</button>
 
             </div>
             

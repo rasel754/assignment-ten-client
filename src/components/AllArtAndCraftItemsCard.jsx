@@ -1,6 +1,6 @@
 import { IoIosStar } from "react-icons/io";
 
-const AllArtAndCraftItemsCard = ({item}) => {
+const AllArtAndCraftItemsCard = ({item,}) => {
     const {
         itemName,
         subcategoryName,
