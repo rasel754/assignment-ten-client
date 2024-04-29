@@ -4,25 +4,29 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { BsGoogle, BsGithub } from "react-icons/bs";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate()
     const auth = getAuth(app);
   const githubProvider = new GithubAuthProvider();
   const googleProvider = new GoogleAuthProvider();
 
-  const { signIn, setUser } = useContext(AuthContext);
+  const { signIn, setUser,setLoading } = useContext(AuthContext);
 
   const [success, setSuccess] = useState("");
   const [registerError, setRegisterError] = useState("");
 
   const handleGoogleLogin = () => {
+    setLoading(true);
     signInWithPopup( auth, googleProvider)
     .then((result) => {
       console.log(result);
       console.log(result.user);
       setUser(result.user);
       setSuccess(Swal.fire("google login successful"))
+      navigate('/')
+
       .catch((err) => {
         console.error(err);
       });
@@ -30,11 +34,13 @@ const Login = () => {
   };
 
   const handleGithubLogin = () => {
+    setLoading(true);
     signInWithPopup(auth, githubProvider)
       .then((res) => {
         console.log(res.user);
         setUser(res.user);
         setSuccess(Swal("successfully Login with Github"));
+        navigate('/')
       })
       .catch((error) => {
         console.error(error);
@@ -50,9 +56,11 @@ const Login = () => {
     const password = form.get("password");
     setSuccess("");
 
-    signIn(email, password).then((result) => {
+    signIn(email, password)
+    .then((result) => {
       setUser(result.user);
       console.log(result.user);
+      navigate('/')
     });
 
     setSuccess(Swal.fire("Login successful with gmail and password")).catch(

@@ -31,17 +31,17 @@ const AddCraftItem = () => {
     const price = form.price.value;
     const processTime = form.processTime.value;
     const name = form.name.value;
-    const email = form.email.value;
+    const UserEmail = form.email.value;
     const rating = form.rating.value;
     const customization = form.customization.value;
     const stockStatus = form.stockStatus.value;
     const photo = form.photo.value;
-    const ownerEmail = user.email;
+    const email = user?.email;
 
-    const Info = {itemName,subcategoryName,shortDescription,price,processTime,name,email,rating,customization, stockStatus, photo,ownerEmail};
+    const Info = {itemName,subcategoryName,shortDescription,price,processTime,name,email,rating,customization, stockStatus, photo,UserEmail};
     console.log(Info);
-
-    fetch("http://localhost:5000/addCraft",{
+    
+    fetch("http://localhost:5000/allArtAndCraft",{
         method:'POST',
         headers:{
             'Content-Type':'application/json'

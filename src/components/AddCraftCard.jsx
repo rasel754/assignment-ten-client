@@ -1,4 +1,5 @@
 import { IoIosStar } from "react-icons/io";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AddCraftCard = ({ list,item,setItem }) => {
@@ -72,7 +73,9 @@ const AddCraftCard = ({ list,item,setItem }) => {
             </div>
 
             <div className="card-actions justify-between">
-            <button className="btn btn-primary">Update</button>
+              <Link to={`/updateCraft/${_id}`}>
+              <button className="btn btn-primary">Update</button>
+              </Link>
             <button
             onClick={()=>handleDelete(_id)}
              className="btn btn-primary btn-warning">Delete</button>

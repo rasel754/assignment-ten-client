@@ -13,11 +13,15 @@ import Register from './components/Register';
 import AddCraftItem from './components/AddCraftItem';
 import MyArtAndCraftList from './components/MyArtAndCraftList';
 import AllArtAndCraftItems from './components/AllArtAndCraftItems';
+import UpdateCraft from './components/UpdateCraft';
+import PrivateRoute from './components/routes/PrivateRoute';
+import ErrorPage from './errorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element:<Root></Root>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         path: "/login",
@@ -30,11 +34,15 @@ const router = createBrowserRouter([
         element:<AddCraftItem></AddCraftItem>
       },{
         path: "/myArtAndCraft",
-        element: <MyArtAndCraftList></MyArtAndCraftList>
+        element: <PrivateRoute><MyArtAndCraftList></MyArtAndCraftList></PrivateRoute>
       },{
         path: "/allArtAndCraft",
-        element:<AllArtAndCraftItems></AllArtAndCraftItems>,
+        element:<PrivateRoute><AllArtAndCraftItems></AllArtAndCraftItems></PrivateRoute>,
         loader :() => fetch('http://localhost:5000/allArtAndCraft')
+      },{
+        path:"/updateCraft",
+        element: <UpdateCraft></UpdateCraft>,
+        loader:({params}) => fetch(`http://localhost:5000/allArtAndCraft/${params.id}`)
       }
 
     ]
