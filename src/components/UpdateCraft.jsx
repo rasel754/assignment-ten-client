@@ -41,7 +41,7 @@ const UpdateCraft = () => {
     const price = form.price.value;
     const processTime = form.processTime.value;
     const name = form.name.value;
-    const UserEmail = form.email.value;
+    // const UserEmail = form.email.value;
     const rating = form.rating.value;
     const customization = form.customization.value;
     const stockStatus = form.stockStatus.value;
@@ -59,7 +59,7 @@ const UpdateCraft = () => {
       customization,
       stockStatus,
       photo,
-      UserEmail,
+    //   UserEmail,
     };
     console.log(UpdatedInfo);
 
@@ -73,7 +73,7 @@ const UpdateCraft = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) {
+        if (data.modifiedCount>0) {
           Swal.fire({
             icon: "success",
             title: "Yaeee...",
