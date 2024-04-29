@@ -55,7 +55,7 @@ const AddCraftItem = () => {
             Swal.fire({
                 icon: "success",
                 title: "Yaaa...",
-                text: "user added successfully",
+                text: " added craft item successfully",
                
               });
               form.reset();
