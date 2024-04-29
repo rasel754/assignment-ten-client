@@ -16,6 +16,7 @@ import AllArtAndCraftItems from './components/AllArtAndCraftItems';
 import UpdateCraft from './components/UpdateCraft';
 import PrivateRoute from './components/routes/PrivateRoute';
 import ErrorPage from './errorPage/ErrorPage';
+import ViewDetails from './components/ViewDetails';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       },{
         path:"/updateCraft/:id",
         element: <UpdateCraft></UpdateCraft>,
+        loader:({params}) => fetch(`http://localhost:5000/allArtAndCraft/${params.id}`)
+      },{
+        path:"/viewDetails/:id",
+        element:<ViewDetails></ViewDetails>,
         loader:({params}) => fetch(`http://localhost:5000/allArtAndCraft/${params.id}`)
       }
 

@@ -1,7 +1,9 @@
 import { IoIosStar } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const AllArtAndCraftItemsCard = ({item,}) => {
     const {
+        _id,
         itemName,
         subcategoryName,
         shortDescription,
@@ -39,8 +41,7 @@ const AllArtAndCraftItemsCard = ({item,}) => {
               </div>
   
               <div className="card-actions justify-end">
-              <button className="btn btn-primary btn-info">View Details</button>
-  
+              <Link to={`/viewDetails/${_id}`}><button className="btn btn-primary btn-info">View Details</button></Link>
               </div>
               
           </div>
