@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../provider/AuthProvider";
+import { Typewriter } from 'react-simple-typewriter'
+
 
 
 const AddCraftItem = () => {
@@ -70,7 +72,10 @@ const AddCraftItem = () => {
   return (
     <div className="">
       <h2 className="text-3xl font-extrabold text-center rounded-t-3xl bg-[#B3D9FF] py-8 md:w-4/5 mx-auto shadow-2xl">
-        Add Craft Item
+      <Typewriter
+      words={['here you can add craft item', 'Add Craft Item']}
+      />
+       {/* <Typewriter> Add Craft Item</Typewriter> */}
       </h2>
       <form
         onSubmit={handleAddCraft}

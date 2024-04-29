@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link , NavLink} from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
+
 const Navbar = () => {
     const {user ,logout }=useContext(AuthContext);
     const [theme ,setTheme]=useState(localStorage.getItem("theme")?localStorage.getItem("theme"):"light");
@@ -49,7 +50,8 @@ const Navbar = () => {
              {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl animate__bounce  "><span className="text-blue-600">Glass & </span > Paper Palette</a>
+          <a className="btn btn-ghost text-xl animate__bounce  ">
+            <span className="text-blue-600">Glass & </span > Paper Palette</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

@@ -5,6 +5,8 @@ import { AuthContext } from "../provider/AuthProvider";
 import { BsGoogle, BsGithub } from "react-icons/bs";
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
+import { Typewriter } from 'react-simple-typewriter'
+
 
 const Login = () => {
   const navigate = useNavigate()
@@ -76,7 +78,12 @@ const Login = () => {
   return (
     <div>
       <div className="">
-        <h1 className="text-3xl text-center mt-5 md:w-3/4 lg:w-1/2 mx-auto p-6 rounded-t-3xl font-semibold bg-[#2957FD]">Login your account</h1>
+        <h1 className="text-3xl text-center mt-5 md:w-3/4 lg:w-1/2 mx-auto p-6 rounded-t-3xl font-semibold bg-[#2957FD]">
+          <Typewriter
+          words={['Please ...', 'Login your account']}
+          />
+          
+          </h1>
         <form
           onSubmit={handleLogin}
           className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-[#cbd5e1] shadow-2xl	"

@@ -3,6 +3,7 @@ import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 
 const Register = () => {
  const [registerError, setRegisterError] = useState("");
@@ -62,7 +63,11 @@ const Register = () => {
     return (
         <div>
       <div>
-        <h1 className="text-3xl text-center mt-5">Register your account</h1>
+        <h1 className="text-3xl text-center mt-5 md:w-3/4 lg:w-1/2 mx-auto p-6 rounded-t-3xl font-semibold bg-[#2957FD]">
+        <Typewriter
+          words={['Please ...', 'Register your account']}
+          />
+          </h1>
         <form
           onSubmit={handleRegister}
           className="card-body md:w-3/4 lg:w-1/2 mx-auto"
