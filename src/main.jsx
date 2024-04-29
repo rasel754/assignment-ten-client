@@ -38,7 +38,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute><MyArtAndCraftList></MyArtAndCraftList></PrivateRoute>
       },{
         path: "/allArtAndCraft",
-        element:<PrivateRoute><AllArtAndCraftItems></AllArtAndCraftItems></PrivateRoute>,
+        element:<AllArtAndCraftItems></AllArtAndCraftItems>,
         loader :() => fetch('http://localhost:5000/allArtAndCraft')
       },{
         path:"/updateCraft/:id",
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
         loader:({params}) => fetch(`http://localhost:5000/allArtAndCraft/${params.id}`)
       },{
         path:"/viewDetails/:id",
-        element:<ViewDetails></ViewDetails>,
+        element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
         loader:({params}) => fetch(`http://localhost:5000/allArtAndCraft/${params.id}`)
       }
 
