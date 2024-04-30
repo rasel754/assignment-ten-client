@@ -63,7 +63,7 @@ const UpdateCraft = () => {
     };
     console.log(UpdatedInfo);
 
-    fetch(`http://localhost:5000/allArtAndCraft/${_id}`, {
+    fetch(`https://assignment-ten-server-bsl2rr2zg-rasel-ahmeds-projects-68daacca.vercel.app/allArtAndCraft/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

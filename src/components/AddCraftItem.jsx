@@ -44,7 +44,7 @@ const AddCraftItem = () => {
     const Info = {itemName,subcategoryName,shortDescription,price,processTime,name,email,rating,customization, stockStatus, photo,UserEmail};
     console.log(Info);
     
-    fetch("http://localhost:5000/allArtAndCraft",{
+    fetch("https://assignment-ten-server-bsl2rr2zg-rasel-ahmeds-projects-68daacca.vercel.app/allArtAndCraft",{
         method:'POST',
         headers:{
             'Content-Type':'application/json'
