@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../provider/AuthProvider";
 import { Typewriter } from 'react-simple-typewriter'
+import { Tooltip } from "react-tooltip";
 
 
 
@@ -269,7 +270,10 @@ const AddCraftItem = () => {
             </label>
           </div>
         </div>
-        <input type="submit" value="Add Craft Item" className="btn btn-block btn-secondary text-black font-extrabold text-2xl" />
+        <input data-tooltip-id="addItem" type="submit" value="Add Craft Item" className="btn btn-block btn-secondary text-black font-extrabold text-2xl" />
+        <Tooltip id="addItem">
+          <h1>Press to add item in MongoDB</h1>
+        </Tooltip>
       </form>
     </div>
   );

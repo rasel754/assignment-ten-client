@@ -6,6 +6,8 @@ import { BsGoogle, BsGithub } from "react-icons/bs";
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
 import { Typewriter } from 'react-simple-typewriter'
+import { Tooltip } from 'react-tooltip';
+
 
 
 const Login = () => {
@@ -118,18 +120,28 @@ const Login = () => {
             </label>
           </div>
           <div className="form-control mt-3">
-            <button className="btn btn-primary ">Login</button>
+            <button data-tooltip-id="login" className="btn btn-primary ">Login</button>
+            <Tooltip id="login">
+              <h1>Click To Login</h1>
+            </Tooltip>
           </div>
         </form>
         <div className="divider divider-info md:w-3/5 lg:w-1/3 mx-auto">OR</div>
         <div className="flex  mx-auto mb-3 w-1/2 md:w-1/4 p-2 border-4">
           <span className="mx-auto flex gap-9">
-            <button onClick={handleGoogleLogin}>
-              <BsGoogle className="text-3xl"></BsGoogle>
+            <button data-tooltip-id="google" onClick={handleGoogleLogin}>
+              <BsGoogle  className="text-3xl"></BsGoogle>
             </button>
-            <button onClick={handleGithubLogin}>
+            <Tooltip id="google">
+                          <h1>Click To Continue with Google</h1>
+               </Tooltip>
+            <button data-tooltip-id="github" onClick={handleGithubLogin}>
               <BsGithub className="text-3xl "></BsGithub>
             </button>
+            <Tooltip id="github">
+            <h1>Click To Continue with GitHub</h1>
+            </Tooltip>
+
           </span>
         </div>
         <p className="text-center ">
