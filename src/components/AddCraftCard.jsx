@@ -29,7 +29,7 @@ const AddCraftCard = ({ list,item,setItem }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         
-        fetch(`https://assignment-ten-server-bsl2rr2zg-rasel-ahmeds-projects-68daacca.vercel.app/myArtAndCraft/${_id}`,{
+        fetch(`https://assignment-ten-server-liart.vercel.app/myArtAndCraft/${_id}`,{
           method:'DELETE'
         })
         .then(res => res.json())

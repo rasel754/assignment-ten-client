@@ -8,7 +8,7 @@ const MyArtAndCraftList = () => {
   console.log(user.email);
 
   useEffect(() => {
-    fetch(`https://assignment-ten-server-bsl2rr2zg-rasel-ahmeds-projects-68daacca.vercel.app/myProduct/${user?.email}`)
+    fetch(`https://assignment-ten-server-liart.vercel.app/myProduct/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setItem(data);

@@ -41,24 +41,26 @@ const router = createBrowserRouter([
       },{
         path: "/allArtAndCraft",
         element:<AllArtAndCraftItems></AllArtAndCraftItems>,
-        loader :() => fetch('https://assignment-ten-server-bsl2rr2zg-rasel-ahmeds-projects-68daacca.vercel.app/allArtAndCraft')
+        loader :() => fetch('https://assignment-ten-server-liart.vercel.app/allArtAndCraft')
       },{
         path:"/updateCraft/:id",
         element: <UpdateCraft></UpdateCraft>,
-        loader:({params}) => fetch(`https://assignment-ten-server-bsl2rr2zg-rasel-ahmeds-projects-68daacca.vercel.app/allArtAndCraft/${params.id}`)
+        loader:({params}) => fetch(`https://assignment-ten-server-liart.vercel.app/allArtAndCraft/${params.id}`)
       },{
         path:"/viewDetails/:id",
         element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-        loader:({params}) => fetch(`https://assignment-ten-server-bsl2rr2zg-rasel-ahmeds-projects-68daacca.vercel.app/allArtAndCraft/${params.id}`)
-      },{
+        loader:({params}) => fetch(`https://assignment-ten-server-liart.vercel.app/allArtAndCraft/${params.id}`)
+       },
+      {
         path:"/",
         element:<CraftItemsSection></CraftItemsSection>,
-        loader :() => fetch("https://assignment-ten-server-bsl2rr2zg-rasel-ahmeds-projects-68daacca.vercel.app/allArtAndCraft")
+        loader :() => fetch("https://assignment-ten-server-liart.vercel.app/allArtAndCraft")
 
-      },{
+      },
+      {
         path:"/craftItemsSectionDetails/:id", 
         element:<CraftItemsSectionDetails></CraftItemsSectionDetails>,
-        loader:({params}) => fetch(`https://assignment-ten-server-bsl2rr2zg-rasel-ahmeds-projects-68daacca.vercel.app/allArtAndCraft/${params.id}`)
+        loader:({params}) => fetch(`https://assignment-ten-server-liart.vercel.app/allArtAndCraft/${params.id}`)
 
       }
 
