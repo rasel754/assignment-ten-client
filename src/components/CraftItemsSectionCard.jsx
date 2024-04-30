@@ -1,19 +1,14 @@
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const CraftItemsSectionCard = ({ item }) => {
   const {
     itemName,
-    subcategoryName,
     shortDescription,
     price,
-    processTime,
-    name,
-    email,
     rating,
-    customization,
-    stockStatus,
     photo,
-    UserEmail,
+    _id
   } = item;
   return (
     <div>
@@ -34,7 +29,7 @@ const CraftItemsSectionCard = ({ item }) => {
             <p className="flex justify-center items-center text-[#FF5400] text-xl font-bold">Rating : {rating}<FaStar></FaStar></p>
           </div>
           <div className="card-actions justify-center">
-            <button className="btn btn-primary ">View Details</button>
+            <Link to={`/craftItemsSectionDetails/${_id}`}><button className="btn btn-primary ">View Details</button></Link>
           </div>
         </div>
       </div>

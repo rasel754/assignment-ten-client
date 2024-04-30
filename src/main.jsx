@@ -18,6 +18,7 @@ import PrivateRoute from './components/routes/PrivateRoute';
 import ErrorPage from './errorPage/ErrorPage';
 import ViewDetails from './components/ViewDetails';
 import CraftItemsSection from './components/CraftItemsSection';
+import CraftItemsSectionDetails from './components/CraftItemsSectionDetails';
 
 const router = createBrowserRouter([
   {
@@ -55,7 +56,10 @@ const router = createBrowserRouter([
         loader :() => fetch("http://localhost:5000/allArtAndCraft")
 
       },{
-        
+        path:"/craftItemsSectionDetails/:id", 
+        element:<CraftItemsSectionDetails></CraftItemsSectionDetails>,
+        loader:({params}) => fetch(`http://localhost:5000/allArtAndCraft/${params.id}`)
+
       }
 
     ]
